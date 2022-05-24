@@ -2,7 +2,7 @@ import { User } from "./models/user.model";
 import { RegisterDto } from "../auth/dto/register.dto";
 
 export class UserRepository {
-  static async findOne(filterQuery: any): Promise<User> {
+  static async findOne(filterQuery: any): Promise<User | any> {
     return await User.findOne(filterQuery);
   }
 

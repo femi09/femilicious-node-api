@@ -11,5 +11,11 @@ export class AuthenticationController {
     }
   }
 
-  static async login(req: Request, res: Response, next: NextFunction) {}
+  static async login(req: Request, res: Response, next: NextFunction) {
+    const response = await AuthenticationService.login(req.body);
+
+    if (response) {
+      res.status(200).send({ message: "login successful", data: response });
+    }
+  }
 }
